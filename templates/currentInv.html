@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="/action_page.php">
+批號: <input type="text" name="FirstName" value=""><br>
+序號: <input type="text" name="LastName" value=""><br>
+
+<input type="submit" value="送出">
+</form>
+
+<table>
+   <tr>
+   	<th>name</th>
+	<th>group</th>
+	<th>serial</th>
+   </tr>
+	{% for key, item in current.items() %}
+  <tr>
+ 
+    <td><a href='/currentInv/serial/{{item['serial']}}'>{{item['equipment_name']}}</a></td>
+    <td><a href='/currentInv/grp/{{item['group']}}'>{{item['group']}}</a></td>
+    <td><a href='/currentInv/serial/{{item['serial']}}'>{{item['serial']}}</a></td>
+   
+  </tr>
+{% endfor %}
+</table>
+
+
+</body>
+</html>
